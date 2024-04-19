@@ -2,7 +2,7 @@ import google.generativeai as genai
 import streamlit as st
 from streamlit import set_page_config
 
-set_page_config(page_title="Data Science Assistant", page_icon="💻", layout="wide")
+set_page_config(page_title="Data Science Assistant", page_icon="💻")
 
 st.markdown(
     "<h1 style='text-align: center; color: blue;'>Data Science Assistant🤖</h1>",
