@@ -33,8 +33,9 @@ if prompt := st.chat_input("Message Data Science Tutor..."):
     with st.chat_message("assistant"):
         model = genai.GenerativeModel(
             model_name="models/gemini-1.5-pro-latest",
-            system_instruction="""Consider yourself as a data scientist. Help the users by answering their queries related to data science!""",
+            system_instruction="""Consider yourself as a data scientist. Help the users by answering their queries related to data science! One main thing, dont answer for any queries apart from data science related things, if they ask convey them that you are only here to help them with data science""",
         )
-        stream = model.generate_content(prompt)
-        response = st.write(stream.text)
+        with st.spinner(text="Hold, Im generating contents for you😉..."):
+            stream = model.generate_content(prompt)
+            response = st.write(stream.text)
     st.session_state.messages.append({"role": "assistant", "content": stream.text})
