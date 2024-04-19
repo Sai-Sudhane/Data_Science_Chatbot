@@ -14,9 +14,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-f = open("keys/.gemini_pro_key.txt")
-key = f.read()
+key = st.secrets["GEMINI_API_KEY"]
 
 genai.configure(api_key=key)
 
